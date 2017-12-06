@@ -21,8 +21,8 @@ of blocks (locally stored in an array) and the concept of hashing. There is one
 single node that generates a first set of 20 blocks at once, and prints them 
 out. 
 
-Credit: @`aunyks <https://gist.github.com/aunyks>`_ and his original 
+Credit: `aunyks <https://gist.github.com/aunyks>`_ and his original 
 `Medium article <https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248b>`_, 
-and @`JohnStuartRutledge <https://gist.github.com/JohnStuartRutledge>`_ for the 
+and `JohnStuartRutledge <https://gist.github.com/JohnStuartRutledge>`_ for the 
 Python3 version
 
