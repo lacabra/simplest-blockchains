@@ -1,5 +1,6 @@
 from datetime import datetime
 import hashlib
+import json
 
 
 class Block:
@@ -20,7 +21,6 @@ class Block:
         sha.update(''.join(seq).encode('utf-8'))
         return sha.hexdigest()
 
-
 def make_genesis_block():
     """Make the first block in a block-chain."""
     block = Block(index=0,
@@ -29,16 +29,14 @@ def make_genesis_block():
                   previous_hash="0")
     return block
 
-
 def next_block(last_block, data=''):
     """Return next block in a block chain."""
     idx = last_block.index + 1
     block = Block(index=idx,
                   timestamp=datetime.now(),
-                  data='{}{}'.format(data, idx),
+                  data='{} {}'.format(data, idx),
                   previous_hash=last_block.hash)
     return block
-
 
 def test_code():
     """Test creating chain of 20 blocks."""
@@ -49,8 +47,7 @@ def test_code():
         blockchain.append(block)
         prev_block = block
         print('{} added to blockchain'.format(block))
-        print('Hash: {}\n'.format(block.hash))
+        print(json.dumps(block.__dict__, sort_keys=True, indent=2, 
+                         separators=(',',':'), default=str)+'\n')
 
-
-# run the test code
 test_code()
